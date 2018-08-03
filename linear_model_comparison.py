@@ -84,49 +84,57 @@ def writeFile(pid):
 		resultFile.write("%d.\n" % len(generated_list))
 		resultFile.write("Donation Type: %s\n" % (donationString(foodType),))
 		resultFile.write("Recipient A\n")
-		resultFile.write("Organization Type: %s (Linear Regression Model: %f, Manual Scoring Model: %f)\n" % (orgSizeString(sizeA), getSizeLinear(sizeA, pid, foodType), scoreOrgSize(sizeA, foodType, pid)))
-		resultFile.write("Food Access: %s (Linear Regression Model: %f, Manual Scoring Model: %f)\n" % (foodAccessString(accessA), getAccessLinear(accessA, pid, foodType), scoreFoodAccess(accessA, foodType, pid)))
-		resultFile.write("Income Level: %s (Linear Regression Model: %f, Manual Scoring Model: %f)\n" % (incomeString(incomeA), getIncomeLinear(incomeA, pid, foodType), scoreIncomeLevel(incomeA, foodType, pid)))
-		resultFile.write("Poverty Rate: %s (Linear Regression Model: %f, Manual Scoring Model: %f)\n" % (povertyString(povertyA), getPovertyLinear(povertyA, pid, foodType), scorePovertyLevel(povertyA, foodType, pid)))
+		resultFile.write("Organization Type: %s (Linear Regression Model: %0.2f, Manual Scoring Model: %0.2f)\n" % (orgSizeString(sizeA), getSizeLinear(sizeA, pid, foodType), scoreOrgSize(sizeA, foodType, pid)))
+		resultFile.write("Food Access: %s (Linear Regression Model: %0.2f, Manual Scoring Model: %0.2f)\n" % (foodAccessString(accessA), getAccessLinear(accessA, pid, foodType), scoreFoodAccess(accessA, foodType, pid)))
+		resultFile.write("Income Level: %s (Linear Regression Model: %0.2f, Manual Scoring Model: %0.2f)\n" % (incomeString(incomeA), getIncomeLinear(incomeA, pid, foodType), scoreIncomeLevel(incomeA, foodType, pid)))
+		resultFile.write("Poverty Rate: %s (Linear Regression Model: %0.2f, Manual Scoring Model: %0.2f)\n" % (povertyString(povertyA), getPovertyLinear(povertyA, pid, foodType), scorePovertyLevel(povertyA, foodType, pid)))
 		if last_donationA == 13:
-			resultFile.write("Last Donation Received: Never (Linear Regression Model: %f, Manual Scoring Model: %f)\n" % (getLastDonationLinear(last_donationA, pid, foodType), scoreLastDonation(last_donationA, foodType, pid)))
+			resultFile.write("Last Donation Received: Never (Linear Regression Model: %0.2f, Manual Scoring Model: %0.2f)\n" % (getLastDonationLinear(last_donationA, pid, foodType), scoreLastDonation(last_donationA, foodType, pid)))
 		elif last_donationA == 1:
-			resultFile.write("Last Donation Received: 1 week ago (Linear Regression Model: %f, Manual Scoring Model: %f)\n" % (getLastDonationLinear(last_donationA, pid, foodType), scoreLastDonation(last_donationA, foodType, pid)))
+			resultFile.write("Last Donation Received: 1 week ago (Linear Regression Model: %0.2f, Manual Scoring Model: %0.2f)\n" % (getLastDonationLinear(last_donationA, pid, foodType), scoreLastDonation(last_donationA, foodType, pid)))
 		else:
-			resultFile.write("Last Donation Received: %d weeks ago (Linear Regression Model: %f, Manual Scoring Model: %f)\n" % (last_donationA, getLastDonationLinear(last_donationA, pid, foodType), scoreLastDonation(last_donationA, foodType, pid)))	
+			resultFile.write("Last Donation Received: %d weeks ago (Linear Regression Model: %0.2f, Manual Scoring Model: %0.2f)\n" % (last_donationA, getLastDonationLinear(last_donationA, pid, foodType), scoreLastDonation(last_donationA, foodType, pid)))	
 		commonDonationA, uncommonDonationA = totalDonationInt(total_donationA)
-		resultFile.write("Total Donation Received: %d common donation / %d uncommmon donation\n (Linear Regression Model: %f, Manual Scoring Model: %f)" % (commonDonationA, uncommonDonationA, getTotalDonationLinear(total_donationA, pid, foodType), scoreTotalDonation(total_donationA, foodType, pid)))
-		resultFile.write("Travel Time: %s minutes\n (Linear Regression Model: %f, Manual Scoring Model: %f)" % (distanceString(distanceA), getDistanceLinear(distanceA, pid, foodType), scoreTravelTime(distanceA, foodType, pid)))
+		resultFile.write("Total Donation Received: %d common donation / %d uncommmon donation\n (Linear Regression Model: %0.2f, Manual Scoring Model: %0.2f)" % (commonDonationA, uncommonDonationA, getTotalDonationLinear(total_donationA, pid, foodType), scoreTotalDonation(total_donationA, foodType, pid)))
+		resultFile.write("Travel Time: %s minutes\n (Linear Regression Model: %0.2f, Manual Scoring Model: %0.2f)" % (distanceString(distanceA), getDistanceLinear(distanceA, pid, foodType), scoreTravelTime(distanceA, foodType, pid)))
 
 		resultFile.write("\n")
 
 		resultFile.write("Recipient B\n")
-		resultFile.write("Organization Type: %s (Linear Regression Model: %f, Manual Scoring Model: %f)\n" % (orgSizeString(sizeB), getSizeLinear(sizeB, pid, foodType), scoreOrgSize(sizeB, foodType, pid)))
-		resultFile.write("Food Access: %s (Linear Regression Model: %f, Manual Scoring Model: %f)\n" % (foodAccessString(accessB), getAccessLinear(accessB, pid, foodType), scoreFoodAccess(accessB, foodType, pid)))
-		resultFile.write("Income Level: %s (Linear Regression Model: %f, Manual Scoring Model: %f)\n" % (incomeString(incomeB), getIncomeLinear(incomeB, pid, foodType), scoreIncomeLevel(incomeB, foodType, pid)))
-		resultFile.write("Poverty Rate: %s (Linear Regression Model: %f, Manual Scoring Model: %f)\n" % (povertyString(povertyB), getPovertyLinear(povertyB, pid, foodType), scorePovertyLevel(povertyB, foodType, pid)))
+		resultFile.write("Organization Type: %s (Linear Regression Model: %0.2f, Manual Scoring Model: %0.2f)\n" % (orgSizeString(sizeB), getSizeLinear(sizeB, pid, foodType), scoreOrgSize(sizeB, foodType, pid)))
+		resultFile.write("Food Access: %s (Linear Regression Model: %0.2f, Manual Scoring Model: %0.2f)\n" % (foodAccessString(accessB), getAccessLinear(accessB, pid, foodType), scoreFoodAccess(accessB, foodType, pid)))
+		resultFile.write("Income Level: %s (Linear Regression Model: %0.2f, Manual Scoring Model: %0.2f)\n" % (incomeString(incomeB), getIncomeLinear(incomeB, pid, foodType), scoreIncomeLevel(incomeB, foodType, pid)))
+		resultFile.write("Poverty Rate: %s (Linear Regression Model: %0.2f, Manual Scoring Model: %0.2f)\n" % (povertyString(povertyB), getPovertyLinear(povertyB, pid, foodType), scorePovertyLevel(povertyB, foodType, pid)))
 		if last_donationB == 0:
-			resultFile.write("Last Donation Received: Never (Linear Regression Model: %f, Manual Scoring Model: %f)\n" % (getLastDonationLinear(last_donationB, pid, foodType), scoreLastDonation(last_donationB, foodType, pid)))
+			resultFile.write("Last Donation Received: Never (Linear Regression Model: %0.2f, Manual Scoring Model: %0.2f)\n" % (getLastDonationLinear(last_donationB, pid, foodType), scoreLastDonation(last_donationB, foodType, pid)))
 		elif last_donationB == 1:
-			resultFile.write("Last Donation Received: 1 week ago (Linear Regression Model: %f, Manual Scoring Model: %f)\n" % (getLastDonationLinear(last_donationB, pid, foodType), scoreLastDonation(last_donationB, foodType, pid)))
+			resultFile.write("Last Donation Received: 1 week ago (Linear Regression Model: %0.2f, Manual Scoring Model: %0.2f)\n" % (getLastDonationLinear(last_donationB, pid, foodType), scoreLastDonation(last_donationB, foodType, pid)))
 		else:
-			resultFile.write("Last Donation Received: %d weeks ago (Linear Regression Model: %f, Manual Scoring Model: %f)\n" % (last_donationB, getLastDonationLinear(last_donationB, pid, foodType), scoreLastDonation(last_donationA, foodType, pid)))
+			resultFile.write("Last Donation Received: %d weeks ago (Linear Regression Model: %0.2f, Manual Scoring Model: %0.2f)\n" % (last_donationB, getLastDonationLinear(last_donationB, pid, foodType), scoreLastDonation(last_donationA, foodType, pid)))
 		commonDonationB, uncommonDonationB = totalDonationInt(total_donationB)
-		resultFile.write("Total Donation Received: %d common donation / %d uncommmon donation (Linear Regression Model: %f, Manual Scoring Model: %f)\n" % (commonDonationB, uncommonDonationB, getTotalDonationLinear(total_donationB, pid, foodType), scoreTotalDonation(total_donationB, foodType, pid)))
-		resultFile.write("Travel Time: %s minutes\n (Linear Regression Model: %f, Manual Scoring Model: %f)" % (distanceString(distanceB), getDistanceLinear(distanceB, pid, foodType), scoreTravelTime(distanceB, foodType, pid)))
+		resultFile.write("Total Donation Received: %d common donation / %d uncommmon donation (Linear Regression Model: %0.2f, Manual Scoring Model: %0.2f)\n" % (commonDonationB, uncommonDonationB, getTotalDonationLinear(total_donationB, pid, foodType), scoreTotalDonation(total_donationB, foodType, pid)))
+		resultFile.write("Travel Time: %s minutes\n (Linear Regression Model: %0.2f, Manual Scoring Model: %0.2f)" % (distanceString(distanceB), getDistanceLinear(distanceB, pid, foodType), scoreTravelTime(distanceB, foodType, pid)))
 
 		resultFile.write("\n")
 		resultFile.write("\n")
 
 		# showing result
 
-		resultFile.write("Linear Regression Model: Recipient A(%f) vs Recipient B(%f)\n" % (linear_A, linear_B))
+		resultFile.write("Linear Regression Model: Recipient A(%0.2f) vs Recipient B(%0.2f)\n" % (linear_A, linear_B,))
 		resultFile.write("Linear Regression Model's Choice: %s\n" % linearResult)
+		if linear_A == 0:
+			resultFile.write("Difference: %0.2f%s\n" % (abs(((linear_B-linear_A)/linear_B)*100), '%'))
+		else:
+			resultFile.write("Difference: %0.2f%s\n" % (abs(((linear_A-linear_B)/linear_A)*100), '%'))
 
 		resultFile.write("\n")
 
-		resultFile.write("Manual Scoring Model: Recipient A(%f) vs Recipient B(%f)\n" % (manual_A, manual_B))
+		resultFile.write("Manual Scoring Model: Recipient A(%0.2f) vs Recipient B(%0.2f)\n" % (manual_A, manual_B))
 		resultFile.write("Manual Scoring Model's Choice: %s\n" % manualResult)
+		if manual_A == 0:
+			resultFile.write("Difference: %0.2f%s\n" % (abs(((manual_B-manual_A)/manual_B)*100), '%'))
+		else:
+			resultFile.write("Difference: %0.2f%s\n" % (abs(((manual_A-manual_B)/manual_A)*100), '%'))
 
 		resultFile.write("\n")
 
@@ -142,8 +150,9 @@ def writeFile(pid):
 			tiedCount +=1
 
 	resultFile.write("Accuracy: %d/%d\n" % (matchCount, len(generated_list)))
-	percentage = (matchCount/len(generated_list))*100
-	resultFile.write("Percentage: %0.1f\n" % (percentage,))
+	if len(generated_list) != 0:
+		percentage = (matchCount/len(generated_list))*100
+		resultFile.write("Percentage: %0.2f\n" % (percentage,))
 	resultFile.write("Tied: %d Scenarios" % (tiedCount,))
 	resultFile.close()
 
