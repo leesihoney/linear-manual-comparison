@@ -7,15 +7,15 @@
 DROP TABLE IF EXISTS beta_values CASCADE;
 CREATE TABLE beta_values (
     stakeholder    text,
-    donation_type  text,
-    size           decimal,
-    access         decimal,
-    income         decimal,       -- <--- replace with enumerated type
-    poverty        decimal,
-    last_donation      decimal,       -- <--- replace with enumerated type
-    distance         decimal,
-    same_donation  decimal,
-    different_donation  decimal,        -- <--- replace with enumerated type
+    donation_type  integer,
+    size           real,
+    access         real,
+    income         real,       -- <--- replace with enumerated type
+    poverty        real,
+    last_donation      real,       -- <--- replace with enumerated type
+    distance         real,
+    same_donation  real,
+    different_donation  real,        -- <--- replace with enumerated type
     pid text
 );
 
